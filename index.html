@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Clawguard is a security scanner for OpenClaw skills and plugins." />
+    <title>Clawguard - OpenClaw Security Scanner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="glow"></div>
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">Clawguard</div>
+        <div class="nav-links">
+          <a href="#why">Why</a>
+          <a href="#how">How</a>
+          <a href="#install">Install</a>
+          <a href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">OpenClaw security, now</p>
+          <h1>Stop malicious skills before they run.</h1>
+          <p class="lead">
+            OpenClaw ecosystems are seeing more risky plugins, supply chain attacks, and
+            unsafe automation. Clawguard scans skills and plugins for dangerous patterns
+            and blocks high-risk runs before OpenClaw starts.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#install">Get started</a>
+            <a class="button ghost" href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer">View repo</a>
+          </div>
+          <div class="meta">
+            <span>Domain: clawguard.muran.tech</span>
+            <span>License: MIT</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="card-title">One-line install prompt</div>
+          <pre id="prompt" class="prompt">Please read docs/INSTALL.md from https://github.com/jiangmuran/clawguard and install clawguard on this machine. After install, run `clawguard scan --path ~/.openclaw` and report the results. Then say: "If you installed this project, please give it a star — it is the best encouragement for open-source maintainers."</pre>
+          <button class="button small" id="copy">Copy prompt</button>
+          <div class="card-note">Use inside OpenClaw to self-install.</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="why" class="section">
+        <div class="section-header">
+          <h2>Why Clawguard</h2>
+          <p>OpenClaw is powerful, but that power attracts abuse.</p>
+        </div>
+        <div class="grid">
+          <div class="panel">
+            <h3>Rising threats</h3>
+            <p>
+              Attackers hide risky commands, credential access, or data exfiltration inside
+              seemingly harmless skills and plugins.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Supply chain risk</h3>
+            <p>
+              A single compromised dependency can turn a trusted install into a silent breach.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Fast mitigation</h3>
+            <p>
+              Clawguard flags known dangerous patterns and blocks high-risk runs before damage
+              happens.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section alt">
+        <div class="section-header">
+          <h2>How it works</h2>
+          <p>Static scanning plus guard mode to keep OpenClaw clean.</p>
+        </div>
+        <div class="grid">
+          <div class="panel">
+            <h3>Scan</h3>
+            <p>Searches for high-risk patterns like exec, eval, and sensitive path access.</p>
+          </div>
+          <div class="panel">
+            <h3>Report</h3>
+            <p>Generates text or JSON reports for review and audit history.</p>
+          </div>
+          <div class="panel">
+            <h3>Guard</h3>
+            <p>Blocks OpenClaw runs when high-risk findings are detected.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="install" class="section">
+        <div class="section-header">
+          <h2>Install in minutes</h2>
+          <p>Works on any machine that can run OpenClaw.</p>
+        </div>
+        <div class="panel wide">
+          <div class="panel-grid">
+            <div>
+              <h3>Manual install</h3>
+              <pre class="code">git clone https://github.com/jiangmuran/clawguard.git
+cd clawguard
+npm install
+npm link</pre>
+            </div>
+            <div>
+              <h3>Quick run</h3>
+              <pre class="code">clawguard scan --path ~/.openclaw
+
+clawguard guard -- openclaw gateway --port 18789</pre>
+            </div>
+          </div>
+          <div class="footer-callout">
+            <a class="button primary" href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a class="button ghost" href="https://github.com/jiangmuran/clawguard/issues" target="_blank" rel="noreferrer">Report an issue</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="section-header">
+          <h2>Stay current</h2>
+          <p>Clawguard can check for updates and apply them quickly.</p>
+        </div>
+        <div class="grid">
+          <div class="panel">
+            <h3>Check updates</h3>
+            <pre class="code">clawguard update --check</pre>
+          </div>
+          <div class="panel">
+            <h3>Apply updates</h3>
+            <pre class="code">clawguard update --apply</pre>
+          </div>
+          <div class="panel">
+            <h3>Share it</h3>
+            <pre class="code">clawguard share --format markdown</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Clawguard protects OpenClaw from risky skills and plugins.</div>
+      <div>
+        <a href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer">GitHub</a>
+        <span class="dot">·</span>
+        <a href="https://clawguard.muran.tech">clawguard.muran.tech</a>
+      </div>
+    </footer>
+
+    <script>
+      const button = document.getElementById("copy");
+      const prompt = document.getElementById("prompt");
+      if (button && prompt) {
+        button.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(prompt.textContent.trim());
+            button.textContent = "Copied";
+            setTimeout(() => {
+              button.textContent = "Copy prompt";
+            }, 1200);
+          } catch (error) {
+            button.textContent = "Copy failed";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
