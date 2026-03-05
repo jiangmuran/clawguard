@@ -43,7 +43,7 @@ function printHelp() {
     "  --apply               Apply update (update command)",
     "  --method <git|npm>    Update method (default: auto)",
     "  --interval <sec>      Watch interval in seconds",
-    "  --auto-update         Auto-update rules before scanning",
+    "  --auto-update         Auto-update rules before scan/watch",
     "",
     "Severity values: low, medium, high",
   ];
@@ -58,6 +58,7 @@ function parseArgs(args) {
     failOn: "high",
     minSeverity: "low",
     output: null,
+    autoUpdate: false,
   };
   const positional = [];
 
@@ -91,6 +92,10 @@ function parseArgs(args) {
     if (arg === "--output") {
       options.output = args[i + 1];
       i += 1;
+      continue;
+    }
+    if (arg === "--auto-update") {
+      options.autoUpdate = true;
       continue;
     }
     positional.push(arg);
@@ -279,7 +284,7 @@ async function runScan(options) {
   const disabledRules = normalized.rules.disable;
 
   try {
-    await maybeAutoUpdateRules(normalized, cwd);
+    await maybeAutoUpdateRules(normalized, cwd, options.autoUpdate);
   } catch (error) {
     console.error(`Rule auto-update failed: ${error.message}`);
   }
@@ -540,7 +545,7 @@ async function runWatch(options) {
   const normalized = normalizeConfig(config, cwd);
   if (options.autoUpdate || normalized.rules.autoUpdate) {
     try {
-      await maybeAutoUpdateRules(normalized, cwd);
+      await maybeAutoUpdateRules(normalized, cwd, true);
     } catch (error) {
       console.error(`Rule auto-update failed: ${error.message}`);
     }
@@ -594,8 +599,8 @@ async function runWatch(options) {
   console.log(`Watching ${scanPathsList.length} path(s) every ${intervalMs / 1000}s...`);
 }
 
-async function maybeAutoUpdateRules(normalizedConfig, cwd) {
-  if (!normalizedConfig.rules.autoUpdate) return;
+async function maybeAutoUpdateRules(normalizedConfig, cwd, force) {
+  if (!normalizedConfig.rules.autoUpdate && !force) return;
   const intervalHours = normalizedConfig.rules.updateIntervalHours || 24;
   const state = loadState();
   const last = state.rulesLastUpdated ? new Date(state.rulesLastUpdated).getTime() : 0;

@@ -4,8 +4,6 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Website](https://img.shields.io/badge/website-clawguard.muran.tech-0b7285)
 
-[![Star History Chart](https://starchart.cc/jiangmuran/clawguard.svg)](https://starchart.cc/jiangmuran/clawguard)
-
 [中文 README](README.zh-CN.md)
 
 OpenClaw has entered a phase where malicious plugins, risky skills, and supply-chain attacks are no longer rare edge cases. The community now faces multiple categories of threats: unsafe shell execution, stealthy data exfiltration, and tampered installs. Clawguard exists to reduce that blast radius.
@@ -62,6 +60,12 @@ Watch for new/changed skills and auto-scan:
 
 ```bash
 clawguard watch --path ~/.openclaw --auto-update
+```
+
+One-time scan with rule auto-update:
+
+```bash
+clawguard scan --path ~/.openclaw --auto-update
 ```
 
 Check system critical paths:
@@ -138,3 +142,7 @@ Enable automatic rule updates:
 - Roadmap: `ROADMAP.md`
 - Contributing: `CONTRIBUTING.md`
 - Security: `SECURITY.md`
+
+## Star history
+
+[![Star History Chart](https://starchart.cc/jiangmuran/clawguard.svg)](https://starchart.cc/jiangmuran/clawguard)

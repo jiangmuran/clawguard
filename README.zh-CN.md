@@ -4,8 +4,6 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Website](https://img.shields.io/badge/website-clawguard.muran.tech-0b7285)
 
-[![Star History Chart](https://starchart.cc/jiangmuran/clawguard.svg)](https://starchart.cc/jiangmuran/clawguard)
-
 [English README](README.md)
 
 OpenClaw 的生态正在出现更多恶意插件与高危技能，供应链投毒、隐蔽外传、危险命令都不再是极端案例。当前风险覆盖多个层面：命令执行、数据外泄、安装链路篡改。Clawguard 的目标是把风险挡在入口处。
@@ -62,6 +60,12 @@ clawguard guard -- openclaw gateway --port 18789
 
 ```bash
 clawguard watch --path ~/.openclaw --auto-update
+```
+
+单次扫描并自动更新规则：
+
+```bash
+clawguard scan --path ~/.openclaw --auto-update
 ```
 
 检查系统关键节点：
@@ -138,3 +142,7 @@ clawguard share --lang zh --format markdown
 - 路线图：`ROADMAP.md`
 - 贡献指南：`CONTRIBUTING.md`
 - 安全政策：`SECURITY.md`
+
+## Star 轨迹
+
+[![Star History Chart](https://starchart.cc/jiangmuran/clawguard.svg)](https://starchart.cc/jiangmuran/clawguard)
