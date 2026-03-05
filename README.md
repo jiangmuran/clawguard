@@ -4,6 +4,8 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Website](https://img.shields.io/badge/website-clawguard.muran.tech-0b7285)
 
+[![Star History Chart](https://starchart.cc/jiangmuran/clawguard.svg)](https://starchart.cc/jiangmuran/clawguard)
+
 [中文 README](README.zh-CN.md)
 
 OpenClaw has entered a phase where malicious plugins, risky skills, and supply-chain attacks are no longer rare edge cases. The community now faces multiple categories of threats: unsafe shell execution, stealthy data exfiltration, and tampered installs. Clawguard exists to reduce that blast radius.
@@ -30,6 +32,14 @@ OpenClaw makes powerful automation available to anyone. That power also lowers t
 - Guard mode to block risky runs
 - Update checker and quick update helper
 - Shareable install snippet for easy promotion
+
+## Planned security upgrades
+
+- Dynamic detection when new skills/plugins are installed
+- Auto-update security rules and detection packs
+- Integrity checks for OpenClaw and Clawguard source tampering
+- System critical path safety checks (keys, sudoers, shell profiles)
+- Continuous improvement of existing detection and guard policies
 
 ## Install
 
