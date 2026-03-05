@@ -6,9 +6,13 @@
 
 [中文 README](README.zh-CN.md)
 
-OpenClaw has entered a phase where malicious plugins, risky skills, and supply-chain attacks are no longer rare edge cases. Real-world incidents now include stealthy exfiltration, unsafe shell execution, and tampered installs. Clawguard exists to reduce that blast radius.
+OpenClaw has entered a phase where malicious plugins, risky skills, and supply-chain attacks are no longer rare edge cases. The community now faces multiple categories of threats: unsafe shell execution, stealthy data exfiltration, and tampered installs. Clawguard exists to reduce that blast radius.
 
 Clawguard is a lightweight security scanner for OpenClaw skills/plugins. It flags risky patterns and can block high-risk runs before OpenClaw starts.
+
+## The story
+
+OpenClaw makes powerful automation available to anyone. That power also lowers the barrier for attackers. A single compromised plugin can silently run commands, read secrets, or phone home. Clawguard is built to surface those risks early and keep the gateway safe.
 
 Website: https://clawguard.muran.tech
 
