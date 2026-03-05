@@ -28,6 +28,7 @@
   "files": [
     "bin",
     "src",
+    "rules",
     "docs",
     "README.md",
     "LICENSE"

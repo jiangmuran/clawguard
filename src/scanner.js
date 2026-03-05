@@ -80,18 +80,9 @@ function scanFile(filePath, rules, disabledRules) {
   return { findings, skipped: false };
 }
 
-function scanPaths({
-  paths,
-  ignorePatterns,
-  rules = RULES,
-  disabledRules = [],
-}) {
-  const findings = [];
+function collectFiles(paths, ignorePatterns) {
   const files = [];
-  const skipped = [];
   const errors = [];
-  const disabledSet = new Set(disabledRules);
-
   for (const rootDir of paths) {
     if (!fs.existsSync(rootDir)) {
       errors.push({ path: rootDir, error: "path does not exist" });
@@ -99,13 +90,28 @@ function scanPaths({
     }
     const stat = fs.statSync(rootDir);
     if (stat.isFile()) {
-      files.push(rootDir);
+      if (!shouldIgnorePath(rootDir, ignorePatterns)) {
+        files.push(rootDir);
+      }
       continue;
     }
     if (stat.isDirectory()) {
       walkDir(rootDir, ignorePatterns, files);
     }
   }
+  return { files, errors };
+}
+
+function scanPaths({
+  paths,
+  ignorePatterns,
+  rules = RULES,
+  disabledRules = [],
+}) {
+  const findings = [];
+  const skipped = [];
+  const disabledSet = new Set(disabledRules);
+  const { files, errors } = collectFiles(paths, ignorePatterns);
 
   for (const filePath of files) {
     const result = scanFile(filePath, rules, disabledSet);
@@ -133,4 +139,5 @@ function scanPaths({
 
 module.exports = {
   scanPaths,
+  collectFiles,
 };
