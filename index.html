@@ -15,67 +15,75 @@
   </head>
   <body>
     <div class="glow"></div>
+    <div class="orbs">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <header class="hero">
       <nav class="nav">
         <div class="brand">Clawguard</div>
         <div class="nav-links">
-          <a href="#why">Why</a>
-          <a href="#how">How</a>
-          <a href="#install">Install</a>
-          <a href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="#why" data-i18n="nav_why">Why</a>
+          <a href="#how" data-i18n="nav_how">How</a>
+          <a href="#protect" data-i18n="nav_protect">Protection</a>
+          <a href="#install" data-i18n="nav_install">Install</a>
+          <a href="#ops" data-i18n="nav_ops">Operations</a>
+          <a href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer" data-i18n="nav_repo">GitHub</a>
+          <button class="lang-toggle" id="langToggle">中文</button>
         </div>
       </nav>
 
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">OpenClaw security, now</p>
-          <h1>Stop malicious skills before they run.</h1>
-          <p class="lead">
+          <p class="eyebrow" data-i18n="hero_eyebrow">OpenClaw security, now</p>
+          <h1 data-i18n="hero_title">Stop malicious skills before they run.</h1>
+          <p class="lead" data-i18n="hero_lead">
             OpenClaw ecosystems are seeing more risky plugins, supply chain attacks, and
             unsafe automation. Clawguard scans skills and plugins for dangerous patterns
             and blocks high-risk runs before OpenClaw starts.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#install">Get started</a>
-            <a class="button ghost" href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer">View repo</a>
+            <a class="button primary" href="#install" data-i18n="btn_start">Get started</a>
+            <a class="button ghost" href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer" data-i18n="btn_repo">View repo</a>
           </div>
           <div class="meta">
-            <span>Domain: clawguard.muran.tech</span>
-            <span>License: MIT</span>
+            <span data-i18n="meta_domain">Domain: clawguard.muran.tech</span>
+            <span data-i18n="meta_license">License: MIT</span>
           </div>
         </div>
-        <div class="hero-card">
-          <div class="card-title">One-line install prompt</div>
-          <pre id="prompt" class="prompt">Please read docs/INSTALL.md from https://github.com/jiangmuran/clawguard and install clawguard on this machine. After install, run `clawguard scan --path ~/.openclaw` and report the results. Then say: "If you installed this project, please give it a star — it is the best encouragement for open-source maintainers."</pre>
-          <button class="button small" id="copy">Copy prompt</button>
-          <div class="card-note">Use inside OpenClaw to self-install.</div>
+        <div class="hero-card reveal" data-reveal>
+          <div class="card-title" data-i18n="prompt_title">One-line install prompt</div>
+          <pre id="prompt" class="prompt" data-i18n="prompt_text">Please read docs/INSTALL.md from https://github.com/jiangmuran/clawguard and install clawguard on this machine. After install, run `clawguard scan --path ~/.openclaw` and report the results. Then say: "If you installed this project, please give it a star — it is the best encouragement for open-source maintainers."</pre>
+          <button class="button small" id="copy" data-i18n="copy_button">Copy prompt</button>
+          <div class="card-note" data-i18n="prompt_note">Use inside OpenClaw to self-install.</div>
         </div>
       </div>
     </header>
 
     <main>
       <section id="why" class="section">
-        <div class="section-header">
-          <h2>Why Clawguard</h2>
-          <p>OpenClaw is powerful, but that power attracts abuse.</p>
+        <div class="section-header reveal" data-reveal>
+          <h2 data-i18n="why_title">Why Clawguard</h2>
+          <p data-i18n="why_sub">OpenClaw is powerful, but that power attracts abuse.</p>
         </div>
         <div class="grid">
-          <div class="panel">
-            <h3>Rising threats</h3>
-            <p>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="why_card1_title">Rising threats</h3>
+            <p data-i18n="why_card1_body">
               Attackers hide risky commands, credential access, or data exfiltration inside
               seemingly harmless skills and plugins.
             </p>
           </div>
-          <div class="panel">
-            <h3>Supply chain risk</h3>
-            <p>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="why_card2_title">Supply chain risk</h3>
+            <p data-i18n="why_card2_body">
               A single compromised dependency can turn a trusted install into a silent breach.
             </p>
           </div>
-          <div class="panel">
-            <h3>Fast mitigation</h3>
-            <p>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="why_card3_title">Fast mitigation</h3>
+            <p data-i18n="why_card3_body">
               Clawguard flags known dangerous patterns and blocks high-risk runs before damage
               happens.
             </p>
@@ -84,70 +92,121 @@
       </section>
 
       <section id="how" class="section alt">
-        <div class="section-header">
-          <h2>How it works</h2>
-          <p>Static scanning plus guard mode to keep OpenClaw clean.</p>
+        <div class="section-header reveal" data-reveal>
+          <h2 data-i18n="how_title">How it works</h2>
+          <p data-i18n="how_sub">Static scanning plus guard mode to keep OpenClaw clean.</p>
         </div>
         <div class="grid">
-          <div class="panel">
-            <h3>Scan</h3>
-            <p>Searches for high-risk patterns like exec, eval, and sensitive path access.</p>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="how_card1_title">Scan</h3>
+            <p data-i18n="how_card1_body">Searches for high-risk patterns like exec, eval, and sensitive path access.</p>
           </div>
-          <div class="panel">
-            <h3>Report</h3>
-            <p>Generates text or JSON reports for review and audit history.</p>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="how_card2_title">Report</h3>
+            <p data-i18n="how_card2_body">Generates text or JSON reports for review and audit history.</p>
           </div>
-          <div class="panel">
-            <h3>Guard</h3>
-            <p>Blocks OpenClaw runs when high-risk findings are detected.</p>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="how_card3_title">Guard</h3>
+            <p data-i18n="how_card3_body">Blocks OpenClaw runs when high-risk findings are detected.</p>
           </div>
         </div>
       </section>
 
-      <section id="install" class="section">
-        <div class="section-header">
-          <h2>Install in minutes</h2>
-          <p>Works on any machine that can run OpenClaw.</p>
+      <section id="protect" class="section">
+        <div class="section-header reveal" data-reveal>
+          <h2 data-i18n="protect_title">Protection layers</h2>
+          <p data-i18n="protect_sub">Continuous defense for new skills, system integrity, and critical nodes.</p>
         </div>
-        <div class="panel wide">
+        <div class="grid">
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="protect_card1_title">Dynamic watch</h3>
+            <p data-i18n="protect_card1_body">Detects new or changed skills/plugins and auto-scans on the fly.</p>
+          </div>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="protect_card2_title">Rule packs</h3>
+            <p data-i18n="protect_card2_body">Auto-updates detection rules and packs from the repo.</p>
+          </div>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="protect_card3_title">Integrity</h3>
+            <p data-i18n="protect_card3_body">Baselines OpenClaw and Clawguard to detect tampering.</p>
+          </div>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="protect_card4_title">System health</h3>
+            <p data-i18n="protect_card4_body">Checks sensitive paths like keys, sudoers, and shell profiles.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="install" class="section alt">
+        <div class="section-header reveal" data-reveal>
+          <h2 data-i18n="install_title">Install in minutes</h2>
+          <p data-i18n="install_sub">Works on any machine that can run OpenClaw.</p>
+        </div>
+        <div class="panel wide reveal" data-reveal>
           <div class="panel-grid">
             <div>
-              <h3>Manual install</h3>
+              <h3 data-i18n="install_manual_title">Manual install</h3>
               <pre class="code">git clone https://github.com/jiangmuran/clawguard.git
 cd clawguard
 npm install
 npm link</pre>
             </div>
             <div>
-              <h3>Quick run</h3>
+              <h3 data-i18n="install_quick_title">Quick run</h3>
               <pre class="code">clawguard scan --path ~/.openclaw
 
 clawguard guard -- openclaw gateway --port 18789</pre>
             </div>
           </div>
           <div class="footer-callout">
-            <a class="button primary" href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer">GitHub repo</a>
-            <a class="button ghost" href="https://github.com/jiangmuran/clawguard/issues" target="_blank" rel="noreferrer">Report an issue</a>
+            <a class="button primary" href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer" data-i18n="install_cta_repo">GitHub repo</a>
+            <a class="button ghost" href="https://github.com/jiangmuran/clawguard/issues" target="_blank" rel="noreferrer" data-i18n="install_cta_issue">Report an issue</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="ops" class="section">
+        <div class="section-header reveal" data-reveal>
+          <h2 data-i18n="ops_title">Security operations</h2>
+          <p data-i18n="ops_sub">Run these anytime for ongoing safety.</p>
+        </div>
+        <div class="grid">
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="ops_card1_title">Watch and auto-scan</h3>
+            <pre class="code">clawguard watch --path ~/.openclaw --auto-update</pre>
+          </div>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="ops_card2_title">Integrity baseline</h3>
+            <pre class="code">clawguard integrity init --openclaw
+clawguard integrity check --openclaw</pre>
+          </div>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="ops_card3_title">Critical path check</h3>
+            <pre class="code">clawguard health</pre>
+          </div>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="ops_card4_title">Rules update</h3>
+            <pre class="code">clawguard rules update</pre>
           </div>
         </div>
       </section>
 
       <section class="section alt">
-        <div class="section-header">
-          <h2>Stay current</h2>
-          <p>Clawguard can check for updates and apply them quickly.</p>
+        <div class="section-header reveal" data-reveal>
+          <h2 data-i18n="maint_title">Stay current</h2>
+          <p data-i18n="maint_sub">Check updates, apply fixes, and share the install prompt.</p>
         </div>
         <div class="grid">
-          <div class="panel">
-            <h3>Check updates</h3>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="maint_card1_title">Check updates</h3>
             <pre class="code">clawguard update --check</pre>
           </div>
-          <div class="panel">
-            <h3>Apply updates</h3>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="maint_card2_title">Apply updates</h3>
             <pre class="code">clawguard update --apply</pre>
           </div>
-          <div class="panel">
-            <h3>Share it</h3>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="maint_card3_title">Share prompt</h3>
             <pre class="code">clawguard share --format markdown</pre>
           </div>
         </div>
@@ -155,7 +214,7 @@ clawguard guard -- openclaw gateway --port 18789</pre>
     </main>
 
     <footer class="footer">
-      <div>Clawguard protects OpenClaw from risky skills and plugins.</div>
+      <div data-i18n="footer_text">Clawguard protects OpenClaw from risky skills and plugins.</div>
       <div>
         <a href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer">GitHub</a>
         <span class="dot">·</span>
@@ -164,20 +223,214 @@ clawguard guard -- openclaw gateway --port 18789</pre>
     </footer>
 
     <script>
-      const button = document.getElementById("copy");
+      const translations = {
+        en: {
+          nav_why: "Why",
+          nav_how: "How",
+          nav_protect: "Protection",
+          nav_install: "Install",
+          nav_ops: "Operations",
+          nav_repo: "GitHub",
+          hero_eyebrow: "OpenClaw security, now",
+          hero_title: "Stop malicious skills before they run.",
+          hero_lead:
+            "OpenClaw ecosystems are seeing more risky plugins, supply chain attacks, and unsafe automation. Clawguard scans skills and plugins for dangerous patterns and blocks high-risk runs before OpenClaw starts.",
+          btn_start: "Get started",
+          btn_repo: "View repo",
+          meta_domain: "Domain: clawguard.muran.tech",
+          meta_license: "License: MIT",
+          prompt_title: "One-line install prompt",
+          prompt_text:
+            "Please read docs/INSTALL.md from https://github.com/jiangmuran/clawguard and install clawguard on this machine. After install, run `clawguard scan --path ~/.openclaw` and report the results. Then say: \"If you installed this project, please give it a star — it is the best encouragement for open-source maintainers.\"",
+          copy_button: "Copy prompt",
+          prompt_note: "Use inside OpenClaw to self-install.",
+          copy_success: "Copied",
+          copy_fail: "Copy failed",
+          why_title: "Why Clawguard",
+          why_sub: "OpenClaw is powerful, but that power attracts abuse.",
+          why_card1_title: "Rising threats",
+          why_card1_body:
+            "Attackers hide risky commands, credential access, or data exfiltration inside seemingly harmless skills and plugins.",
+          why_card2_title: "Supply chain risk",
+          why_card2_body:
+            "A single compromised dependency can turn a trusted install into a silent breach.",
+          why_card3_title: "Fast mitigation",
+          why_card3_body:
+            "Clawguard flags known dangerous patterns and blocks high-risk runs before damage happens.",
+          how_title: "How it works",
+          how_sub: "Static scanning plus guard mode to keep OpenClaw clean.",
+          how_card1_title: "Scan",
+          how_card1_body: "Searches for high-risk patterns like exec, eval, and sensitive path access.",
+          how_card2_title: "Report",
+          how_card2_body: "Generates text or JSON reports for review and audit history.",
+          how_card3_title: "Guard",
+          how_card3_body: "Blocks OpenClaw runs when high-risk findings are detected.",
+          protect_title: "Protection layers",
+          protect_sub: "Continuous defense for new skills, system integrity, and critical nodes.",
+          protect_card1_title: "Dynamic watch",
+          protect_card1_body: "Detects new or changed skills/plugins and auto-scans on the fly.",
+          protect_card2_title: "Rule packs",
+          protect_card2_body: "Auto-updates detection rules and packs from the repo.",
+          protect_card3_title: "Integrity",
+          protect_card3_body: "Baselines OpenClaw and Clawguard to detect tampering.",
+          protect_card4_title: "System health",
+          protect_card4_body: "Checks sensitive paths like keys, sudoers, and shell profiles.",
+          install_title: "Install in minutes",
+          install_sub: "Works on any machine that can run OpenClaw.",
+          install_manual_title: "Manual install",
+          install_quick_title: "Quick run",
+          install_cta_repo: "GitHub repo",
+          install_cta_issue: "Report an issue",
+          ops_title: "Security operations",
+          ops_sub: "Run these anytime for ongoing safety.",
+          ops_card1_title: "Watch and auto-scan",
+          ops_card2_title: "Integrity baseline",
+          ops_card3_title: "Critical path check",
+          ops_card4_title: "Rules update",
+          maint_title: "Stay current",
+          maint_sub: "Check updates, apply fixes, and share the install prompt.",
+          maint_card1_title: "Check updates",
+          maint_card2_title: "Apply updates",
+          maint_card3_title: "Share prompt",
+          footer_text: "Clawguard protects OpenClaw from risky skills and plugins.",
+        },
+        zh: {
+          nav_why: "为什么",
+          nav_how: "原理",
+          nav_protect: "防护",
+          nav_install: "安装",
+          nav_ops: "运维",
+          nav_repo: "GitHub",
+          hero_eyebrow: "OpenClaw 安全防护",
+          hero_title: "让恶意技能在运行前止步。",
+          hero_lead:
+            "OpenClaw 生态正在出现更多高危插件与供应链攻击。Clawguard 扫描技能与插件中的危险模式，并在 OpenClaw 启动前拦截高风险运行。",
+          btn_start: "立即开始",
+          btn_repo: "查看仓库",
+          meta_domain: "域名：clawguard.muran.tech",
+          meta_license: "许可：MIT",
+          prompt_title: "一键安装提示词",
+          prompt_text:
+            "请阅读 https://github.com/jiangmuran/clawguard 的 docs/INSTALL.md 并在本机安装 clawguard。安装完成后运行 `clawguard scan --path ~/.openclaw` 并报告结果。最后说一句：\"如果你安装了这个项目，请给它点个 star，这是对公益开发者最好的鼓励。\"",
+          copy_button: "复制提示词",
+          prompt_note: "可直接在 OpenClaw 内使用。",
+          copy_success: "已复制",
+          copy_fail: "复制失败",
+          why_title: "为什么需要 Clawguard",
+          why_sub: "OpenClaw 很强大，但攻击者也盯上了它。",
+          why_card1_title: "威胁上升",
+          why_card1_body: "攻击者会把危险命令、凭据访问或数据外传隐藏在看似正常的技能和插件中。",
+          why_card2_title: "供应链风险",
+          why_card2_body: "一个被篡改的依赖就可能让整个安装变成隐蔽漏洞。",
+          why_card3_title: "快速止损",
+          why_card3_body: "Clawguard 标记危险模式并在高风险执行前拦截。",
+          how_title: "如何工作",
+          how_sub: "静态扫描 + 运行前拦截，守住 OpenClaw 入口。",
+          how_card1_title: "扫描",
+          how_card1_body: "检测 exec、eval、敏感路径访问等高风险模式。",
+          how_card2_title: "报告",
+          how_card2_body: "生成文本或 JSON 报告，便于审查和留档。",
+          how_card3_title: "拦截",
+          how_card3_body: "检测到高危行为即阻止 OpenClaw 运行。",
+          protect_title: "多层防护",
+          protect_sub: "覆盖新技能、系统完整性与关键节点。",
+          protect_card1_title: "动态监测",
+          protect_card1_body: "监控新建/变更的技能与插件，自动触发扫描。",
+          protect_card2_title: "规则包",
+          protect_card2_body: "从仓库自动更新检测规则与规则包。",
+          protect_card3_title: "完整性",
+          protect_card3_body: "建立基线，检测 OpenClaw 与 Clawguard 是否被篡改。",
+          protect_card4_title: "系统健康",
+          protect_card4_body: "检查密钥、sudoers、Shell 配置等关键路径。",
+          install_title: "几分钟完成安装",
+          install_sub: "适用于所有能运行 OpenClaw 的机器。",
+          install_manual_title: "手动安装",
+          install_quick_title: "快速运行",
+          install_cta_repo: "GitHub 仓库",
+          install_cta_issue: "提交问题",
+          ops_title: "安全运维",
+          ops_sub: "随时运行，持续保持安全。",
+          ops_card1_title: "监听并自动扫描",
+          ops_card2_title: "完整性基线",
+          ops_card3_title: "关键节点检查",
+          ops_card4_title: "规则更新",
+          maint_title: "保持最新",
+          maint_sub: "检查更新、应用修复、分享安装提示词。",
+          maint_card1_title: "检查更新",
+          maint_card2_title: "应用更新",
+          maint_card3_title: "分享提示",
+          footer_text: "Clawguard 守护 OpenClaw 免受恶意技能与插件侵害。",
+        },
+      };
+
+      const elements = document.querySelectorAll("[data-i18n]");
+      const toggle = document.getElementById("langToggle");
       const prompt = document.getElementById("prompt");
-      if (button && prompt) {
-        button.addEventListener("click", async () => {
-          try {
-            await navigator.clipboard.writeText(prompt.textContent.trim());
-            button.textContent = "Copied";
-            setTimeout(() => {
-              button.textContent = "Copy prompt";
-            }, 1200);
-          } catch (error) {
-            button.textContent = "Copy failed";
+      const copyButton = document.getElementById("copy");
+
+      const applyLang = (lang) => {
+        const selected = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        elements.forEach((el) => {
+          const key = el.dataset.i18n;
+          if (selected[key]) {
+            el.textContent = selected[key];
           }
         });
+        if (toggle) {
+          toggle.textContent = lang === "zh" ? "EN" : "中文";
+        }
+        if (copyButton) {
+          copyButton.dataset.copyLabel = selected.copy_button;
+        }
+        if (copyButton) {
+          copyButton.textContent = selected.copy_button;
+        }
+      };
+
+      const stored = localStorage.getItem("clawguard_lang");
+      const browserLang = (navigator.language || "").toLowerCase();
+      const preferred = stored || (browserLang.startsWith("zh") ? "zh" : "en");
+      applyLang(preferred);
+
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          const next = document.documentElement.lang === "zh" ? "en" : "zh";
+          localStorage.setItem("clawguard_lang", next);
+          applyLang(next);
+        });
+      }
+
+      if (copyButton && prompt) {
+        copyButton.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(prompt.textContent.trim());
+            copyButton.textContent = translations[document.documentElement.lang].copy_success || "Copied";
+            setTimeout(() => {
+              copyButton.textContent = translations[document.documentElement.lang].copy_button || "Copy prompt";
+            }, 1200);
+          } catch (error) {
+            copyButton.textContent = translations[document.documentElement.lang].copy_fail || "Copy failed";
+          }
+        });
+      }
+
+      const revealItems = document.querySelectorAll("[data-reveal]");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        revealItems.forEach((el) => observer.observe(el));
+      } else {
+        revealItems.forEach((el) => el.classList.add("is-visible"));
       }
     </script>
   </body>

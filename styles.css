@@ -6,7 +6,7 @@
   --muted: #495057;
   --accent: #0b7285;
   --accent-2: #8b5cf6;
-  --shadow: rgba(15, 23, 42, 0.1);
+  --shadow: rgba(15, 23, 42, 0.12);
   --mono: "IBM Plex Mono", "Courier New", monospace;
   --sans: "Space Grotesk", "Helvetica Neue", sans-serif;
 }
@@ -23,6 +23,7 @@ body {
     var(--bg);
   color: var(--ink);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -38,6 +39,40 @@ a {
   mix-blend-mode: multiply;
 }
 
+.orbs span {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(0);
+  opacity: 0.35;
+  animation: float 16s ease-in-out infinite;
+}
+
+.orbs span:nth-child(1) {
+  width: 240px;
+  height: 240px;
+  background: rgba(11, 114, 133, 0.2);
+  top: 10%;
+  left: 6%;
+}
+
+.orbs span:nth-child(2) {
+  width: 180px;
+  height: 180px;
+  background: rgba(139, 92, 246, 0.22);
+  bottom: 8%;
+  right: 6%;
+  animation-delay: -4s;
+}
+
+.orbs span:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  background: rgba(11, 114, 133, 0.18);
+  top: 45%;
+  right: 18%;
+  animation-delay: -8s;
+}
+
 .hero {
   padding: 48px 7vw 40px;
 }
@@ -47,6 +82,8 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 48px;
+  position: relative;
+  z-index: 2;
 }
 
 .brand {
@@ -57,8 +94,10 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   font-weight: 500;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav a {
@@ -70,11 +109,22 @@ a {
   color: var(--accent);
 }
 
+.lang-toggle {
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-copy h1 {
@@ -149,7 +199,6 @@ a {
   box-shadow: 0 18px 50px var(--shadow);
   display: grid;
   gap: 16px;
-  animation: floatIn 0.8s ease;
 }
 
 .card-title {
@@ -257,14 +306,24 @@ a {
   padding: 0 8px;
 }
 
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    transform: translateY(-18px);
   }
 }
 
@@ -278,6 +337,10 @@ a {
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .meta {
+    flex-direction: column;
   }
 
   .footer {
