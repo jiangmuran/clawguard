@@ -28,18 +28,14 @@ OpenClaw makes powerful automation available to anyone. That power also lowers t
 
 - Full scan and security health check for skills/plugins
 - Comprehensive risk detection (exec, eval, sensitive paths)
+- Dynamic detection when new skills/plugins are installed
+- Auto-update detection rules and packs
+- Integrity checks for OpenClaw and Clawguard source tampering
+- System critical path safety checks (keys, sudoers, shell profiles)
 - Generate reports (text or JSON)
 - Guard mode to block risky runs
 - Update checker and quick update helper
 - Shareable install snippet for easy promotion
-
-## Planned security upgrades
-
-- Dynamic detection when new skills/plugins are installed
-- Auto-update security rules and detection packs
-- Integrity checks for OpenClaw and Clawguard source tampering
-- System critical path safety checks (keys, sudoers, shell profiles)
-- Continuous improvement of existing detection and guard policies
 
 ## Install
 
@@ -58,6 +54,33 @@ clawguard scan --path ~/.openclaw
 
 ```bash
 clawguard guard -- openclaw gateway --port 18789
+```
+
+## Security operations
+
+Watch for new/changed skills and auto-scan:
+
+```bash
+clawguard watch --path ~/.openclaw --auto-update
+```
+
+Check system critical paths:
+
+```bash
+clawguard health
+```
+
+Create integrity baselines and verify OpenClaw:
+
+```bash
+clawguard integrity init --openclaw
+clawguard integrity check --openclaw
+```
+
+Update rule packs manually:
+
+```bash
+clawguard rules update
 ```
 
 ## Update
@@ -94,6 +117,17 @@ Create `clawguard.config.json` in the project root:
   "minSeverity": "medium",
   "rules": {
     "disable": ["SECRET_ENV"]
+  }
+}
+```
+
+Enable automatic rule updates:
+
+```json
+{
+  "rules": {
+    "autoUpdate": true,
+    "updateIntervalHours": 24
   }
 }
 ```
