@@ -68,6 +68,10 @@ clawguard update --apply
 }
 ```
 
+If you installed this project, please give it a star — it is the best encouragement for open-source maintainers.
+
+如果你安装了这个项目，请给它点个 star，这是对公益开发者最好的鼓励。
+
 ---
 
 ## English
