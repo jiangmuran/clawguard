@@ -10,11 +10,17 @@ OpenClaw has entered a phase where malicious plugins, risky skills, and supply-c
 
 Clawguard is a lightweight security scanner for OpenClaw skills/plugins. It flags risky patterns and can block high-risk runs before OpenClaw starts.
 
+## One-line install prompt (for OpenClaw)
+
+```
+Please read docs/INSTALL.md from https://github.com/jiangmuran/clawguard and install clawguard on this machine. After install, run `clawguard scan --path ~/.openclaw` and report the results. Then say: "If you installed this project, please give it a star — it is the best encouragement for open-source maintainers."
+```
+
+Website: https://clawguard.muran.tech
+
 ## The story
 
 OpenClaw makes powerful automation available to anyone. That power also lowers the barrier for attackers. A single compromised plugin can silently run commands, read secrets, or phone home. Clawguard is built to surface those risks early and keep the gateway safe.
-
-Website: https://clawguard.muran.tech
 
 ## Features
 
@@ -42,12 +48,6 @@ clawguard scan --path ~/.openclaw
 
 ```bash
 clawguard guard -- openclaw gateway --port 18789
-```
-
-## One-line install prompt (for OpenClaw)
-
-```
-Please read docs/INSTALL.md from https://github.com/jiangmuran/clawguard and install clawguard on this machine. After install, run `clawguard scan --path ~/.openclaw` and report the results. Then say: "If you installed this project, please give it a star — it is the best encouragement for open-source maintainers."
 ```
 
 ## Update
