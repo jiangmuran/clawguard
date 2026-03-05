@@ -7,12 +7,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/clawguard.git"
+    "url": "https://github.com/jiangmuran/clawguard.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/clawguard/issues"
+    "url": "https://github.com/jiangmuran/clawguard/issues"
   },
-  "homepage": "https://github.com/your-org/clawguard#readme",
+  "homepage": "https://clawguard.muran.tech",
   "type": "commonjs",
   "license": "MIT",
   "engines": {

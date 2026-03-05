@@ -14,7 +14,7 @@
 2. 克隆并安装：
 
 ```bash
-git clone https://github.com/your-org/clawguard.git
+git clone https://github.com/jiangmuran/clawguard.git
 cd clawguard
 npm install
 npm link
@@ -84,7 +84,7 @@ Please read docs/INSTALL.md and install clawguard on this machine. After install
 2. Clone and install:
 
 ```bash
-git clone https://github.com/your-org/clawguard.git
+git clone https://github.com/jiangmuran/clawguard.git
 cd clawguard
 npm install
 npm link
