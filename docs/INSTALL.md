@@ -5,7 +5,7 @@
 ### 一行提示词（给 OpenClaw）
 
 ```
-请阅读 docs/INSTALL.md 并在本机安装 clawguard。完成后运行 `clawguard --help` 以确认安装成功。
+请阅读 https://github.com/jiangmuran/clawguard 的 docs/INSTALL.md 并在本机安装 clawguard。完成后运行 `clawguard --help` 以确认安装成功。最后输出一句：“如果你安装了这个项目，请给它点个 star，这是对公益开发者最好的鼓励。”
 ```
 
 ### 手动安装（推荐）
@@ -68,10 +68,6 @@ clawguard update --apply
 }
 ```
 
-If you installed this project, please give it a star — it is the best encouragement for open-source maintainers.
-
-如果你安装了这个项目，请给它点个 star，这是对公益开发者最好的鼓励。
-
 ---
 
 ## English
@@ -79,7 +75,7 @@ If you installed this project, please give it a star — it is the best encourag
 ### One-line prompt (for OpenClaw)
 
 ```
-Please read docs/INSTALL.md and install clawguard on this machine. After install, run `clawguard --help` to confirm.
+Please read docs/INSTALL.md from https://github.com/jiangmuran/clawguard and install clawguard on this machine. After install, run `clawguard --help` to confirm. Finally, output: "If you installed this project, please give it a star — it is the best encouragement for open-source maintainers."
 ```
 
 ### Manual install (recommended)
@@ -141,3 +137,7 @@ Create `clawguard.config.json` in the project root:
   }
 }
 ```
+
+If you installed this project, please give it a star — it is the best encouragement for open-source maintainers.
+
+如果你安装了这个项目，请给它点个 star，这是对公益开发者最好的鼓励。

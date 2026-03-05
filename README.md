@@ -18,7 +18,8 @@ Website: https://clawguard.muran.tech
 
 ## Features
 
-- Scan skills/plugins for risky patterns (exec, eval, sensitive paths)
+- Full scan and security health check for skills/plugins
+- Comprehensive risk detection (exec, eval, sensitive paths)
 - Generate reports (text or JSON)
 - Guard mode to block risky runs
 - Update checker and quick update helper
@@ -46,7 +47,7 @@ clawguard guard -- openclaw gateway --port 18789
 ## One-line install prompt (for OpenClaw)
 
 ```
-Please read docs/INSTALL.md and install clawguard on this machine. After install, run `clawguard scan --path ~/.openclaw` and report the results.
+Please read docs/INSTALL.md from https://github.com/jiangmuran/clawguard and install clawguard on this machine. After install, run `clawguard scan --path ~/.openclaw` and report the results. Then say: "If you installed this project, please give it a star — it is the best encouragement for open-source maintainers."
 ```
 
 ## Update
