@@ -20,6 +20,18 @@ npm install
 npm link
 ```
 
+### 一键安装（macOS/Linux）
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jiangmuran/clawguard/main/install.sh | bash
+```
+
+### 一键安装（Windows PowerShell）
+
+```powershell
+iwr -useb https://raw.githubusercontent.com/jiangmuran/clawguard/main/install.ps1 | iex
+```
+
 3. 验证：
 
 ```bash
@@ -88,6 +100,18 @@ git clone https://github.com/jiangmuran/clawguard.git
 cd clawguard
 npm install
 npm link
+```
+
+### One-line install (macOS/Linux)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jiangmuran/clawguard/main/install.sh | bash
+```
+
+### One-line install (Windows PowerShell)
+
+```powershell
+iwr -useb https://raw.githubusercontent.com/jiangmuran/clawguard/main/install.ps1 | iex
 ```
 
 3. Verify:

@@ -45,6 +45,18 @@ npm install
 npm link
 ```
 
+一键安装（macOS/Linux）：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jiangmuran/clawguard/main/install.sh | bash
+```
+
+一键安装（Windows PowerShell）：
+
+```powershell
+iwr -useb https://raw.githubusercontent.com/jiangmuran/clawguard/main/install.ps1 | iex
+```
+
 ## 快速开始
 
 ```bash

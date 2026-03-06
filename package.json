@@ -30,6 +30,8 @@
     "src",
     "rules",
     "docs",
+    "install.sh",
+    "install.ps1",
     "README.md",
     "LICENSE"
   ],
