@@ -29,6 +29,8 @@
           <a href="#protect" data-i18n="nav_protect">Protection</a>
           <a href="#install" data-i18n="nav_install">Install</a>
           <a href="#ops" data-i18n="nav_ops">Operations</a>
+          <a href="#use" data-i18n="nav_use">Use cases</a>
+          <a href="#faq" data-i18n="nav_faq">FAQ</a>
           <a href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer" data-i18n="nav_repo">GitHub</a>
           <button class="lang-toggle" id="langToggle">中文</button>
         </div>
@@ -211,6 +213,65 @@ clawguard integrity check --openclaw</pre>
           </div>
         </div>
       </section>
+
+      <section id="use" class="section">
+        <div class="section-header reveal" data-reveal>
+          <h2 data-i18n="use_title">Where Clawguard fits</h2>
+          <p data-i18n="use_sub">From solo setups to team rollouts, keep OpenClaw safe by default.</p>
+        </div>
+        <div class="grid">
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="use_card1_title">Install audits</h3>
+            <p data-i18n="use_card1_body">Scan new skills/plugins before enabling them in your gateway.</p>
+          </div>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="use_card2_title">Continuous monitoring</h3>
+            <p data-i18n="use_card2_body">Watch for changes and auto-scan the moment a file is updated.</p>
+          </div>
+          <div class="panel reveal" data-reveal>
+            <h3 data-i18n="use_card3_title">Tamper detection</h3>
+            <p data-i18n="use_card3_body">Create baselines to detect suspicious edits to OpenClaw or Clawguard.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section alt">
+        <div class="section-header reveal" data-reveal>
+          <h2 data-i18n="faq_title">FAQ</h2>
+          <p data-i18n="faq_sub">Quick answers for common questions.</p>
+        </div>
+        <div class="faq">
+          <details class="panel reveal" data-reveal>
+            <summary data-i18n="faq_q1">Does Clawguard modify OpenClaw?</summary>
+            <p data-i18n="faq_a1">No. It only scans files and blocks risky runs when you use guard mode.</p>
+          </details>
+          <details class="panel reveal" data-reveal>
+            <summary data-i18n="faq_q2">How do rule updates work?</summary>
+            <p data-i18n="faq_a2">Rule packs can be auto-updated or pulled manually with `clawguard rules update`.</p>
+          </details>
+          <details class="panel reveal" data-reveal>
+            <summary data-i18n="faq_q3">Can I use it with my existing skills?</summary>
+            <p data-i18n="faq_a3">Yes. Point `clawguard scan` at any skills/plugins folder.</p>
+          </details>
+          <details class="panel reveal" data-reveal>
+            <summary data-i18n="faq_q4">How can I support the project?</summary>
+            <p data-i18n="faq_a4">If you installed it, please give it a star on GitHub.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta reveal" data-reveal>
+          <div>
+            <h2 data-i18n="cta_title">Protect your gateway today</h2>
+            <p data-i18n="cta_sub">Run the one-line prompt or install manually in minutes.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="button primary" href="https://github.com/jiangmuran/clawguard" target="_blank" rel="noreferrer" data-i18n="cta_repo">Open GitHub</a>
+            <a class="button ghost" href="#install" data-i18n="cta_install">Install now</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -230,6 +291,8 @@ clawguard integrity check --openclaw</pre>
           nav_protect: "Protection",
           nav_install: "Install",
           nav_ops: "Operations",
+          nav_use: "Use cases",
+          nav_faq: "FAQ",
           nav_repo: "GitHub",
           hero_eyebrow: "OpenClaw security, now",
           hero_title: "Stop malicious skills before they run.",
@@ -292,6 +355,28 @@ clawguard integrity check --openclaw</pre>
           maint_card1_title: "Check updates",
           maint_card2_title: "Apply updates",
           maint_card3_title: "Share prompt",
+          use_title: "Where Clawguard fits",
+          use_sub: "From solo setups to team rollouts, keep OpenClaw safe by default.",
+          use_card1_title: "Install audits",
+          use_card1_body: "Scan new skills/plugins before enabling them in your gateway.",
+          use_card2_title: "Continuous monitoring",
+          use_card2_body: "Watch for changes and auto-scan the moment a file is updated.",
+          use_card3_title: "Tamper detection",
+          use_card3_body: "Create baselines to detect suspicious edits to OpenClaw or Clawguard.",
+          faq_title: "FAQ",
+          faq_sub: "Quick answers for common questions.",
+          faq_q1: "Does Clawguard modify OpenClaw?",
+          faq_a1: "No. It only scans files and blocks risky runs when you use guard mode.",
+          faq_q2: "How do rule updates work?",
+          faq_a2: "Rule packs can be auto-updated or pulled manually with `clawguard rules update`.",
+          faq_q3: "Can I use it with my existing skills?",
+          faq_a3: "Yes. Point `clawguard scan` at any skills/plugins folder.",
+          faq_q4: "How can I support the project?",
+          faq_a4: "If you installed it, please give it a star on GitHub.",
+          cta_title: "Protect your gateway today",
+          cta_sub: "Run the one-line prompt or install manually in minutes.",
+          cta_repo: "Open GitHub",
+          cta_install: "Install now",
           footer_text: "Clawguard protects OpenClaw from risky skills and plugins.",
         },
         zh: {
@@ -300,6 +385,8 @@ clawguard integrity check --openclaw</pre>
           nav_protect: "防护",
           nav_install: "安装",
           nav_ops: "运维",
+          nav_use: "场景",
+          nav_faq: "常见问题",
           nav_repo: "GitHub",
           hero_eyebrow: "OpenClaw 安全防护",
           hero_title: "让恶意技能在运行前止步。",
@@ -359,6 +446,28 @@ clawguard integrity check --openclaw</pre>
           maint_card1_title: "检查更新",
           maint_card2_title: "应用更新",
           maint_card3_title: "分享提示",
+          use_title: "适用场景",
+          use_sub: "从个人环境到团队部署，默认保持 OpenClaw 安全。",
+          use_card1_title: "安装前审计",
+          use_card1_body: "在启用技能/插件之前先扫描一遍。",
+          use_card2_title: "持续监控",
+          use_card2_body: "监听文件变更并立即触发扫描。",
+          use_card3_title: "篡改检测",
+          use_card3_body: "建立基线，发现 OpenClaw 或 Clawguard 的可疑改动。",
+          faq_title: "常见问题",
+          faq_sub: "快速了解关键问题。",
+          faq_q1: "Clawguard 会修改 OpenClaw 吗？",
+          faq_a1: "不会。它只扫描文件，并在 guard 模式下阻止高风险运行。",
+          faq_q2: "规则更新如何工作？",
+          faq_a2: "规则包可自动更新，也可手动执行 `clawguard rules update`。",
+          faq_q3: "可以用在已有技能上吗？",
+          faq_a3: "可以。把 `clawguard scan` 指向你的 skills/plugins 目录即可。",
+          faq_q4: "如何支持这个项目？",
+          faq_a4: "如果你安装了，请到 GitHub 点个 star。",
+          cta_title: "现在就保护你的网关",
+          cta_sub: "一键提示词或手动安装，几分钟完成。",
+          cta_repo: "打开 GitHub",
+          cta_install: "立即安装",
           footer_text: "Clawguard 守护 OpenClaw 免受恶意技能与插件侵害。",
         },
       };

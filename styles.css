@@ -277,6 +277,51 @@ a {
   gap: 24px;
 }
 
+.faq {
+  display: grid;
+  gap: 16px;
+}
+
+.faq summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq details {
+  padding: 20px 24px;
+}
+
+.faq details p {
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.faq details[open] {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.cta {
+  background: linear-gradient(120deg, rgba(11, 114, 133, 0.14), rgba(139, 92, 246, 0.12));
+  border-radius: 22px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 18px 50px var(--shadow);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .code {
   font-family: var(--mono);
   background: #f1f3f5;
@@ -345,5 +390,10 @@ a {
 
   .footer {
     flex-direction: column;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
