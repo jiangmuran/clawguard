@@ -94,6 +94,13 @@ clawguard integrity init --openclaw
 clawguard integrity check --openclaw
 ```
 
+Check Clawguard source integrity:
+
+```bash
+clawguard integrity init --self
+clawguard integrity check --self
+```
+
 Update rule packs manually:
 
 ```bash

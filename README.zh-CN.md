@@ -94,6 +94,13 @@ clawguard integrity init --openclaw
 clawguard integrity check --openclaw
 ```
 
+校验 Clawguard 自身源码完整性：
+
+```bash
+clawguard integrity init --self
+clawguard integrity check --self
+```
+
 手动更新规则包：
 
 ```bash

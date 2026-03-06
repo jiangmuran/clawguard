@@ -28,7 +28,7 @@ function shouldIgnorePath(filePath, ignorePatterns) {
   return ignorePatterns.some((pattern) => filePath.includes(pattern));
 }
 
-function walkDir(rootDir, ignorePatterns, files) {
+function walkDir(rootDir, ignorePatterns, files, options) {
   const entries = fs.readdirSync(rootDir, { withFileTypes: true });
   for (const entry of entries) {
     const fullPath = path.join(rootDir, entry.name);
@@ -36,14 +36,16 @@ function walkDir(rootDir, ignorePatterns, files) {
 
     if (entry.isDirectory()) {
       if (DEFAULT_IGNORE_DIRS.has(entry.name)) continue;
-      walkDir(fullPath, ignorePatterns, files);
+      walkDir(fullPath, ignorePatterns, files, options);
       continue;
     }
 
     if (entry.isSymbolicLink()) continue;
 
-    const ext = path.extname(entry.name).toLowerCase();
-    if (!DEFAULT_EXTENSIONS.has(ext)) continue;
+    if (!options.includeAll) {
+      const ext = path.extname(entry.name).toLowerCase();
+      if (!options.extensions.has(ext)) continue;
+    }
     files.push(fullPath);
   }
 }
@@ -80,7 +82,11 @@ function scanFile(filePath, rules, disabledRules) {
   return { findings, skipped: false };
 }
 
-function collectFiles(paths, ignorePatterns) {
+function collectFiles(paths, ignorePatterns, options = {}) {
+  const resolvedOptions = {
+    includeAll: Boolean(options.includeAll),
+    extensions: options.extensions || DEFAULT_EXTENSIONS,
+  };
   const files = [];
   const errors = [];
   for (const rootDir of paths) {
@@ -96,7 +102,7 @@ function collectFiles(paths, ignorePatterns) {
       continue;
     }
     if (stat.isDirectory()) {
-      walkDir(rootDir, ignorePatterns, files);
+      walkDir(rootDir, ignorePatterns, files, resolvedOptions);
     }
   }
   return { files, errors };

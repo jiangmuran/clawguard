@@ -6,7 +6,7 @@ const { collectFiles } = require("./scanner");
 const { toAbsolute } = require("./utils");
 
 const BASELINE_PATH = path.join(os.homedir(), ".clawguard", "baselines.json");
-const MAX_HASH_SIZE = 5 * 1024 * 1024;
+const MAX_HASH_SIZE = 50 * 1024 * 1024;
 
 function loadBaselines() {
   try {
@@ -34,7 +34,7 @@ function hashFile(filePath) {
 }
 
 function buildSnapshot(rootPath, ignorePatterns) {
-  const { files, errors } = collectFiles([rootPath], ignorePatterns);
+  const { files, errors } = collectFiles([rootPath], ignorePatterns, { includeAll: true });
   const root = path.resolve(rootPath);
   const snapshot = {
     root,

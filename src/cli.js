@@ -481,7 +481,7 @@ function runIntegrity(options) {
   if (options.openclaw) {
     paths.push(...resolveOpenclawPaths());
   }
-  if (options.self && options.action === "init") {
+  if (options.self) {
     paths.push(cwd);
   }
   if (paths.length === 0 && !options.self) {
