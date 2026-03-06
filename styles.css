@@ -277,6 +277,33 @@ a {
   gap: 24px;
 }
 
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.step {
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 12px 30px var(--shadow);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(11, 114, 133, 0.12);
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
 .faq {
   display: grid;
   gap: 16px;
@@ -314,6 +341,7 @@ a {
   justify-content: space-between;
   gap: 24px;
   box-shadow: 0 18px 50px var(--shadow);
+  animation: pulse 6s ease-in-out infinite;
 }
 
 .cta-actions {
@@ -369,6 +397,16 @@ a {
   }
   50% {
     transform: translateY(-18px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
   }
 }
 
