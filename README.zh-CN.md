@@ -3,6 +3,7 @@
 ![CI](https://github.com/jiangmuran/clawguard/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Website](https://img.shields.io/badge/website-clawguard.muran.tech-0b7285)
+![Downloads](https://img.shields.io/github/downloads/jiangmuran/clawguard/total.svg)
 
 [English README](README.md)
 
