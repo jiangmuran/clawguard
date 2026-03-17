@@ -87,9 +87,19 @@ a {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
 }
 
 .nav-links {
@@ -125,6 +135,14 @@ a {
   align-items: center;
   position: relative;
   z-index: 1;
+}
+
+.hero-logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.14);
 }
 
 .hero-copy h1 {
